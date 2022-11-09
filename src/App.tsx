@@ -3,24 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const mouseMoveHandler = (e: MouseEvent) => {
+    console.log(`mouse move x:${e.screenX} y:${e.screenY}`);
+  };
+
+  // 3️⃣
+  const mouseUpHandler = (e: MouseEvent) => {
+    console.warn(`>>>> mouse up x:${e.screenX} y:${e.screenY}`);
+    document.removeEventListener('mousemove', mouseMoveHandler);
+  };
+
+  // 1️⃣
+  document.addEventListener('mousemove', mouseMoveHandler);
+  document.addEventListener('mouseup', mouseUpHandler);
+  return <div className='drag'>app</div>;
 }
 
 export default App;

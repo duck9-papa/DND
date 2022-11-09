@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.drag{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
