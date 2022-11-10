@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   const mouseMoveHandler = (e: MouseEvent) => {
@@ -16,7 +17,11 @@ function App() {
   // 1️⃣
   document.addEventListener('mousemove', mouseMoveHandler);
   document.addEventListener('mouseup', mouseUpHandler);
-  return <div className='drag'>app</div>;
+  return (
+    <div className="drag" draggable = "true">
+      app
+    </div>
+  );
 }
 
 export default App;
