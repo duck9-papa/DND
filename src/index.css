@@ -16,4 +16,10 @@ code {
   width: 100px;
   height: 100px;
   background-color: black;
+  border-radius: 50px;
+  margin: 100px;
+}
+
+.target{
+  margin: 50px;
 }
