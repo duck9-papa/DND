@@ -6,8 +6,6 @@ import { useState } from 'react';
 function Drop() {
   const [dragOver, setDragOver] = useState(false);
   const [count, setCount] = useState({});
-  const handleDragOverStart = () => setDragOver(true);
-  const handleDragOverEnd = () => setDragOver(false);
 
   const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
     event.dataTransfer.setData('text', event.currentTarget.id);
