@@ -41,7 +41,6 @@
     -->
   </body>
   <script>
-
     // var x = 'inho';
 
     // function name() {
@@ -50,14 +49,31 @@
 
     // name();
 
-  //   const name = {
-  //   a: 'inho',
-  //   b: 'kang',
-  //   c: function () {
-  //     console.log(this.a + this.b); //여기서의 this는 name 객체를 가리킨다. name.a + name.b 와 동일 
-  //   },
-  // };
-  // name.c();
+    //   const name = {
+    //   a: 'inho',
+    //   b: 'kang',
+    //   c: function () {
+    //     console.log(this.a + this.b); //여기서의 this는 name 객체를 가리킨다. name.a + name.b 와 동일
+    //   },
+    // };
+    // name.c();
 
+    function name(name, age) {
+      this.name = name;
+      this.age = age;
+      this.info = function () {
+        console.log(this.name, this.age); //여기서의 this는 객체를 가리킨다. // 'inho', 25
+        setTimeout(() => {
+          console.log(`name: ${this.name}, age: ${this.age}`); // 화살표 함수로 변경시 바로 바깥에 있는 this값을 사용 (즉 객체를 가리킴)
+        }, 1000);
+      };
+    }
+
+    var inho = new name('inho', 25);
+
+    inho.info();  // name:inho, age: 25
+
+    // // console.log(inho.name) // Cannot read properties of undefined
+    // console.log(window.name) // inho
   </script>
 </html>
