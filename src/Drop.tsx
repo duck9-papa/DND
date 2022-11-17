@@ -2,8 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-
-function Drop() {
+var x = this
+console.log(x)
+function Drop(this: any) {
   const [dragOver, setDragOver] = useState(false);
   const [count, setCount] = useState(0);
   const handleDragOverStart = () => setDragOver(true);
@@ -22,6 +23,7 @@ function Drop() {
     setCount(count + 1);
     setDragOver(false);
   };
+  console.log(this)
   return (
     <div>
       <div
